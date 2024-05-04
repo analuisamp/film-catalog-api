@@ -60,12 +60,12 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-##Experience with Technologies
-TypeScript: 1 year
-Nest.js: -
-TypeORM: -
-Swagger:  1 year
-Docker: -
-Redis: -
-PostgreSQL:  1 year
+## Experience with Technologies
+- TypeScript: 1 year
+- Nest.js: -
+- TypeORM: -
+- Swagger:  1 year
+- Docker: -
+- Redis: -
+- PostgreSQL:  1 year
 
