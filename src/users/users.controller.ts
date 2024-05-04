@@ -8,7 +8,6 @@ import {
   Param,
   Put,
   Post,
-  HttpException,
   UseInterceptors,
   UseGuards,
 } from '@nestjs/common';
@@ -62,22 +61,5 @@ export class UsersController {
   @Delete(':id')
   async remove(@Param('id') id: string) {
     return this.usersService.remove(id);
-  }
-
-  @ApiResponse({ status: HttpStatus.OK, description: 'Login successful' })
-  @Roles(Role.Admin)
-  @Post('login')
-  async login(@Body('email') email: string, @Body('password') password: string) {
-    if (!email || !password) {
-      throw new HttpException('Email and password are required', HttpStatus.BAD_REQUEST);
-    }
-
-    const user = await this.usersService.findByEmailAndPassword(email, password);
-
-    if (!user) {
-      throw new HttpException('Invalid email or password', HttpStatus.UNAUTHORIZED);
-    }
-
-    return { message: 'Login successful' };
   }
 }

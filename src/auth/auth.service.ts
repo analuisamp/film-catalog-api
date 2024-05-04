@@ -17,7 +17,7 @@ export class AuthService {
         name: user.name,
         email: user.email
       }, {
-        expiresIn: "1d",
+        expiresIn: "3m",
         subject: String(user.id),
         issuer: "login",
         audience: "users",
