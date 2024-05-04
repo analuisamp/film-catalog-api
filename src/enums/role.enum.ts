@@ -1,4 +1,5 @@
+// Implementation of new roles in the future
+
 export enum Role {
-  User = 1,
-  Admin = 2,
+  Admin = 1
 }

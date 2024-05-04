@@ -3,7 +3,6 @@ import { JwtModule } from "@nestjs/jwt"
 import { AuthController } from "./auth.controller"
 import { UsersModule } from "src/users/users.module"
 import { forwardRef } from '@nestjs/common';
-import { DatabaseModule } from "src/database/database.module"
 import { AuthService } from "./auth.service"
 import { MoviesModule } from "src/movies/movies.module"
 

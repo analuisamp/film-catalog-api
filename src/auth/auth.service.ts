@@ -55,34 +55,6 @@ export class AuthService {
 
     return this.createToken(user);
   }
-
-  async forget(email: string) {
-    const user = await this.userService.findByEmail(email);
-
-    if (!user) {
-      throw new HttpException('Invalid email', HttpStatus.UNAUTHORIZED);
-    }
-
-    //TODO: enviar o email
-
-    return this.createToken(user);
-  }
-
-
-  async reset(password: string, token: string) {
-    //TODO: Validar Token
-
-    const id = '0'
-
-    const updateUserDTO: UpdateUserDTO = {
-      password: password
-  };
-
-    const user = await this.userService.update(id, updateUserDTO)
-
-    return this.createToken(user);
-  }
-
   async register(data: AuthRegisterDTO) {
     const user = await this.userService.create(data);
 
