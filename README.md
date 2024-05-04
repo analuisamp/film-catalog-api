@@ -23,21 +23,14 @@ The architecture consists of an application providing a RESTful JSON API, using 
 Amazon EC2
 
 ## How to Use
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/movie-catalog-api.git
    
-## Installation
+### Installation
 
 ```bash
 $ pnpm install
 ```
 
-## Running the app
+### Running the app
 
 ```bash
 # development
@@ -54,7 +47,7 @@ The API will be accessible at http://localhost:3000.
 ###Swagger Documentation
 You can access the Swagger documentation at http://localhost:3000/swagger.
 
-## Test
+### Test
 
 ```bash
 # unit tests
@@ -67,7 +60,7 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-###Experience with Technologies
+##Experience with Technologies
 TypeScript: 1 year
 Nest.js: -
 TypeORM: -
