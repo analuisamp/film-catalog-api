@@ -8,38 +8,68 @@ import {
   Param,
   Put,
   Post,
+  HttpException,
+  UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { UpdateUserDTO } from './dto/update-user.dto';
+import { Roles } from 'src/decorators/role.decorator';
+import { Role } from 'src/enums/role.enum';
+import { RoleGuard } from 'src/guards/role.guard';
+import { AuthGuard } from 'src/guards/auth.guard';
 
+@UseGuards(AuthGuard, RoleGuard)
+@UseInterceptors()
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @Roles(Role.Admin)
   @Get()
-  findAll() {
+  async findAll() {
     return this.usersService.findAll();
   }
 
+  @Roles(Role.Admin)
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     return this.usersService.findOne(id);
   }
 
+  @Roles(Role.Admin)
   @Post()
-  create(@Body() createUserDTO: CreateUserDTO) {
+  async create(@Body() createUserDTO: CreateUserDTO) {
     return this.usersService.create(createUserDTO);
   }
 
+  @Roles(Role.Admin)
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateUserDTO: UpdateUserDTO) {
+  async update(@Param('id') id: string, @Body() updateUserDTO: UpdateUserDTO) {
     return this.usersService.update(id, updateUserDTO);
   }
 
+  @Roles(Role.Admin)
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
     return this.usersService.remove(id);
+  }
+
+  @Roles(Role.Admin)
+  @Post('login')
+  async login(@Body('email') email: string, @Body('password') password: string) {
+    if (!email || !password) {
+      throw new HttpException('Email and password are required', HttpStatus.BAD_REQUEST);
+    }
+
+    const user = await this.usersService.findByEmailAndPassword(email, password);
+
+    if (!user) {
+      throw new HttpException('Invalid email or password', HttpStatus.UNAUTHORIZED);
+    }
+
+    return { message: 'Login successful' };
   }
 }

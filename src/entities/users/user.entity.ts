@@ -7,10 +7,16 @@ export class User {
   id: string;
 
   @Column({ unique: true })
-  username: string;
+  email: string;
+
+  @Column()
+  name: string;
 
   @Column()
   password: string;
+
+  @Column({ default: 1 })
+  role: number;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date

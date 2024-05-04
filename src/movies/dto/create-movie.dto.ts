@@ -1,4 +1,5 @@
-import { IsString } from "class-validator";
+import { IsString, IsEnum,  IsOptional} from "class-validator";
+import { Role } from "src/enums/role.enum";
 
 export class CreateMovieDTO {
   @IsString()

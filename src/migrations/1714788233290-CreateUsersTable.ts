@@ -13,12 +13,21 @@ export class CreateUsersTable1714788233290 implements MigrationInterface {
               isPrimary: true
             },
             {
-              name: 'username',
+              name: 'email',
+              type: 'varchar',
+            },
+            {
+              name: 'name',
               type: 'varchar',
             },
             {
               name: 'password',
               type: 'varchar',
+            },
+            {
+              name: 'role',
+              type: 'integer',
+              default: 1
             },
             {
               name: 'created_at',

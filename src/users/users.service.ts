@@ -54,4 +54,13 @@ export class UsersService {
     }
     return this.userRepository.remove(user)
   }
+
+  async findByEmailAndPassword(email: string, password: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { email, password } });
+  }
+
+  async findByEmail(email: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { email } });
+  }
+
 }
