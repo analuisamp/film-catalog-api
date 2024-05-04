@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MoviesModule } from './movies/movies.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
@@ -13,7 +11,7 @@ import { forwardRef } from '@nestjs/common';
     forwardRef(() =>DatabaseModule),
     forwardRef(() =>UsersModule),
     forwardRef(() => AuthModule)],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
