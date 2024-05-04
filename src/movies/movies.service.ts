@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
-import { Movie } from '../entities/movies.entity';
+import { Movie } from '../entities/movies/movies.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Genre } from 'src/entities/genres.entity';
+import { Genre } from 'src/entities/movies/genres.entity';
 import { CreateMovieDTO } from './dto/create-movie.dto';
 import { UpdateMovieDTO } from './dto/update-movie.dto';
 

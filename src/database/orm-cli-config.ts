@@ -5,6 +5,7 @@ import { CreateGenresTable1714778875259 } from 'src/migrations/1714778875259-Cre
 import { CreateMoviesGenresTable1714779625411 } from 'src/migrations/1714779625411-CreateMoviesGenresTable'
 import { AddMoviesIdToGenresTable1714780057974 } from 'src/migrations/1714780057974-AddMoviesIdToGenresTable'
 import { AddGenresIdToMoviesTable1714780838509 } from 'src/migrations/1714780838509-AddGenresIdToMoviesTable'
+import { CreateUsersTable1714788233290 } from 'src/migrations/1714788233290-CreateUsersTable'
 
 export const dataSource = new DataSource({
   ...dataSourceOptions,
@@ -14,6 +15,7 @@ export const dataSource = new DataSource({
     CreateGenresTable1714778875259,
     CreateMoviesGenresTable1714779625411,
     AddMoviesIdToGenresTable1714780057974,
-    AddGenresIdToMoviesTable1714780838509
+    AddGenresIdToMoviesTable1714780838509,
+    CreateUsersTable1714788233290,
   ],
 })
