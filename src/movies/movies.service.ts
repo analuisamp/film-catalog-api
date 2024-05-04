@@ -46,6 +46,8 @@ export class MoviesService {
     if(!movie){
       throw new HttpException(`Movie ID ${id} not found`, HttpStatus.NOT_FOUND)
     }
+
+    return movie
   }
 
   async create(createMovieDTO: CreateMovieDTO) {
