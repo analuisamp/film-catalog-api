@@ -13,8 +13,12 @@ export const dataSourceOptions: DataSourceOptions = {
   username: 'postgres',
   password: 'mks',
   database: 'movie',
+  url: process.env.DATABASE_URL,
   entities: [Movie, Genre, User],
   synchronize: false,
+  extra: {
+    ssl: true
+}
 }
 
 
