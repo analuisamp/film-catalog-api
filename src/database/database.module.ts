@@ -16,9 +16,6 @@ export const dataSourceOptions: DataSourceOptions = {
   url: process.env.DATABASE_URL,
   entities: [Movie, Genre, User],
   synchronize: false,
-  extra: {
-    ssl: true
-}
 }
 
 
