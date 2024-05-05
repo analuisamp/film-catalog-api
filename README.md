@@ -20,7 +20,8 @@ The architecture consists of an application providing a RESTful JSON API, using 
 
 ### Deployment
 
-Amazon EC2
+Heroku
+https://apinestjs-film-catalog-b4e6bc228e9d.herokuapp.com/
 
 ## How to Use
    
@@ -45,20 +46,7 @@ $ pnpm run start:prod
 The API will be accessible at http://localhost:3000.
 
 ###Swagger Documentation
-You can access the Swagger documentation at http://localhost:3000/swagger.
-
-### Test
-
-```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
-```
+You can access the Swagger documentation at http://localhost:3000/swagger
 
 ## Experience with Technologies
 - TypeScript: 1 year
