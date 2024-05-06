@@ -20,7 +20,9 @@ export const dataSourceOptions: DataSourceOptions = {
   database: process.env.DB_NAME,
   entities: [Movie, Genre, User],
   synchronize: false,
-  ssl: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 }
 
 export const dataSource = new DataSource({
