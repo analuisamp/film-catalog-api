@@ -19,9 +19,11 @@ import { Role } from 'src/enums/role.enum';
 import { RoleGuard } from 'src/guards/role.guard';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiTags('Movies')
 @UseGuards(AuthGuard, RoleGuard)
+@ApiBearerAuth()
 @UseInterceptors()
 @Controller('movies')
 export class MoviesController {

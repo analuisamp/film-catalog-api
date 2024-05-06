@@ -11,6 +11,7 @@ async function bootstrap() {
     .setTitle('Film Catalog')
     .setDescription('This is a project of a film catalog with JWT authentication, developed using TypeScript, Nest.js, TypeORM, Swagger, Docker, Redis, and PostgreSQL. The aim of this project is to provide a RESTful API for managing a movie catalog. Authenticated users can perform CRUD operations on movies.')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('', app, document);
