@@ -18,6 +18,7 @@ import { User } from 'src/entities/users/user.entity';
         database: configService.get('DB_NAME'),
         entities: [Movie, Genre, User],
         synchronize: false,
+        ssl: true
       }
     },
     inject: [ConfigService]
