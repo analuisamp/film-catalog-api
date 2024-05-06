@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "nest build",
-    "heroku-postbuild": "pnpx typeorm migration:run -d dist/ormconfig-cli.js && npm run build",
+    "heroku-postbuild": "pnpx typeorm migration:run -d dist/database/ormconfig-cli.js && npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
