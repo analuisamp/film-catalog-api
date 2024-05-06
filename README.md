@@ -46,7 +46,7 @@ $ pnpm run start:prod
 The API will be accessible at http://localhost:3000.
 
 ###Swagger Documentation
-You can access the Swagger documentation at http://localhost:3000/swagger
+You can access the Swagger documentation at http://localhost:3000.
 
 ## Experience with Technologies
 - TypeScript: 1 year
