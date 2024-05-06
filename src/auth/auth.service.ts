@@ -17,7 +17,7 @@ export class AuthService {
         name: user.name,
         email: user.email
       }, {
-        expiresIn: "3m",
+        expiresIn: process.env.JWT_EXPIRATION,
         subject: String(user.id),
         issuer: "login",
         audience: "users",

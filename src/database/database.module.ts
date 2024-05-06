@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm'
+import { config } from 'dotenv';
 import { Genre } from 'src/entities/movies/genres.entity';
 import { Movie } from 'src/entities/movies/movies.entity';
 import { User } from 'src/entities/users/user.entity';
@@ -10,7 +11,8 @@ import { User } from 'src/entities/users/user.entity';
       return {
         type: 'postgres',
         host: configService.get('DB_HOST'),
-        port: configService.get('DB_PORT'),
+        url: configService.get('DATABASE_URL'),
+        port: Number(configService.get('DB_PORT')),
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASS'),
         database: configService.get('DB_NAME'),

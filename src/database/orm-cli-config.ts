@@ -13,6 +13,7 @@ import 'dotenv/config'
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
   host: process.env.DB_HOST,
+  url: process.env.DATABASE_URL,
   port: Number(process.env.DB_PORT),
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
