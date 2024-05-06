@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "nest build",
-    "heroku-postbuild": "npm run typeorm:migrate && npm run build",
+    "heroku-postbuild": "pnpm run typeorm:migrate && pnpm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
