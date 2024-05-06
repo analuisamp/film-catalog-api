@@ -9,7 +9,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({isGlobal:true}),
     forwardRef(() => MoviesModule),
     forwardRef(() =>DatabaseModule),
     forwardRef(() =>UsersModule),
