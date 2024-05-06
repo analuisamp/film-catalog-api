@@ -10,7 +10,6 @@
   },
   "scripts": {
     "build": "nest build",
-    "heroku-postbuild": "pnpx typeorm migration:run -c production -d dist/ormconfig-cli.js && npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -22,10 +21,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "clean": "rm -rf dist",
-    "typeorm:generate": "npx typeorm-ts-node-esm migration:generate -d src/db/dataSourceLocal.ts",
-    "typeorm:migrate": "npx typeorm-ts-node-esm migration:run -d src/db/dataSourceLocal.ts",
-    "typeorm:revert": "npx typeorm-ts-node-esm migration:revert -d src/db/dataSourceLocal.ts",
-    "typeorm:drop": "npx typeorm-ts-node-esm schema:drop -d src/db/dataSourceLocal.ts"
+    "typeorm:generate": "npx typeorm-ts-node-esm migration:generate -d src/database/orm-cli-config.ts",
+    "typeorm:migrate": "npx typeorm-ts-node-esm migration:run -d src/database/orm-cli-config.ts",
+    "typeorm:revert": "npx typeorm-ts-node-esm migration:revert -d src/database/orm-cli-config.ts",
+    "typeorm:drop": "npx typeorm-ts-node-esm schema:drop -d src/database/orm-cli-config.ts"
   },
   "dependencies": {
     "@nestjs/cli": "^10.0.0",
