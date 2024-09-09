@@ -48,12 +48,4 @@ The API will be accessible at http://localhost:3000.
 ###Swagger Documentation
 You can access the Swagger documentation at http://localhost:3000.
 
-## Experience with Technologies
-- TypeScript: 1 year
-- Nest.js: -
-- TypeORM: -
-- Swagger:  1 year
-- Docker: -
-- Redis: -
-- PostgreSQL:  1 year
 
